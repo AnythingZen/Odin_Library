@@ -1,0 +1,147 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/trash.css');
+
+:root {
+    box-sizing: border-box;
+
+    --main-bg-color : #F98866;
+    --secondary-bg-color : hsl(40, 100%, 92%);
+    --button-hover-color : hsla(40, 100%, 92%, 0.534);
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+.gg-trash {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 18px;
+    height: 20px;
+    border: 2px solid transparent;
+    box-shadow:
+        0 0 0 2px,
+        inset -2px 0 0,
+        inset 2px 0 0;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    margin-top: 4px
+}
+.gg-trash::after,
+.gg-trash::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-trash::after {
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px
+}
+.gg-trash::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px;
+}
+.gg-trash:hover{
+    color: red;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    border: 1px solid #F98866;
+}
+
+.top {
+    height: 15vh;
+    background-color: var(--main-bg-color);
+}
+
+.top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.bookButton {
+    border-radius: 12px;
+    padding: 5px 20px;
+    border: 2px solid var(--secondary-bg-color);
+
+    background-color: var(--secondary-bg-color);
+
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.bookButton:hover {
+    background-color: var(--button-hover-color);
+}
+
+
+.bottom {
+    height: 85vh;
+    background: linear-gradient(var(--main-bg-color), var(--secondary-bg-color));
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    padding: 40px;
+}
+
+.card {
+    position: relative;
+    padding: 20px;
+
+    background-color: var(--button-hover-color);
+
+    box-shadow: 4px 4px 4px var(--secondary-bg-color);
+
+    max-height: 250px;
+    clip-path: polygon(0 1%, 85% 0, 100% 40%, 100% 99%, 0 100%, 0% 50%);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+    
+}
+
+.card-content > div {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.delete-content {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    padding: 15px;
+}
+
