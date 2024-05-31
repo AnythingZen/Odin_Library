@@ -9,6 +9,8 @@ function Book(author, title, pages) {
 let cardGrid = document.querySelector('.card-grid');
 
 function addCard() {
+    cardGrid.innerHTML = '';
+
     myLibrary.forEach(book => {
 
         let card = document.createElement('div');
@@ -20,13 +22,14 @@ function addCard() {
         card.classList.add('card');
         cardContent.classList.add('card-content');
         deleteContent.classList.add('delete-content');
+        trashButton.classList.add('trash');
         trashIcon.classList.add('gg-trash');
 
         card.appendChild(cardContent);
         card.appendChild(deleteContent);
         deleteContent.appendChild(trashButton);
         trashButton.appendChild(trashIcon);
-        console.log('hi1');
+
         for (let i = 0; i < 3; i++) {
             const div = document.createElement('div');
             cardContent.appendChild(div);
@@ -60,8 +63,18 @@ function addBookToLibrary() {
     let inputPages = document.getElementById('input-pages');
 
     myLibrary.push(new Book(inputAuthor.value, inputTitle.value, inputPages.value));
-    console.log('hi2');
     addCard();
     hideDisplay();
     return;
 }
+
+cardGrid.addEventListener('click', (event) => {
+    const trash = event.target.className;
+
+    if (trash === 'gg-trash') {
+        const cardToDelete = event.target.closest('.card');
+        cardGrid.removeChild(cardToDelete);
+        myLibrary.splice(myLibrary.indexOf(cardToDelete), 1);
+    }
+})
+
