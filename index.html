@@ -5,20 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
-    <script src="index.js" defer></script>
     <title>Library</title>
 </head>
 
 <body>
     <div class="top">
         <div class="top-wrapper">
-            <button type="button" class="bookButton">NEW BOOK</button>
+            <button type="button" class="bookButton" onclick="unhideDisplay()">NEW BOOK</button>
         </div>
     </div>
 
     <div class="display">
-        <form action="">
-            
+
+        <form action="" id="add-book">
+            <div class="display-author">
+                <label for="input-author"> Author: </label>
+                <input type="text" name="input-author" id="input-author">
+            </div>
+
+            <div class="display-title">
+                <label for="input-title">Title: </label>
+                <input type="text" name="input-title" id="input-title">
+            </div>
+
+            <div class="display-pages">
+                <label for="input-pages">Pages: </label>
+                <input type="text" name="input-pages" id="input-pages">
+            </div>
+
+            <button type="submit" class="display-button" onclick="addBookToLibrary()">
+                Add Book
+            </button>
         </form>
 
     </div>
@@ -45,5 +62,5 @@
     </div>
 
 </body>
-
+<script src="index.js"></script>
 </html>

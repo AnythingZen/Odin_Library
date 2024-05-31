@@ -98,6 +98,68 @@ body {
     background-color: var(--button-hover-color);
 }
 
+.display {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 30%;
+    top: 25%;
+
+    width: 35vw;
+    height: 45vh;
+    padding: 25px;
+
+    border-radius: 15px;
+    background-color: #a28089;
+}
+
+.active {
+    display: block;
+}
+
+#add-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    gap: 20px;
+}
+
+#add-book>div>label {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    color: white;
+}
+
+#add-book>div>input {
+    border-radius: 12px;
+    background-color: #d0bdf4;
+    height: 40px;
+    margin-top: 15px;
+    width : 80%;
+
+    font-size: 1.5rem;
+}
+
+.display-button {
+    border-radius: 12px;
+    padding: 5px 20px;
+    border: 2px solid #d0bdf4;
+
+    background: linear-gradient(#d0bdf4, #a28089);
+
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.display-button:hover {
+    background: linear-gradient(hsla(261, 71%, 85%, 0.582), hsla(344, 15%, 57%, 0.596));
+}
 
 .bottom {
     height: 85vh;
@@ -107,7 +169,7 @@ body {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+    gap: 30px;
     padding: 40px;
 }
 
